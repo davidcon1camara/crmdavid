@@ -9,12 +9,12 @@ import { LoginComponent } from './componentes/login/login.component';
 import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'clientes', component: ClientesComponent, canActivate: [AuthGuard]},
-  { path: 'servicios', component: ServiciosComponent, canActivate: [AuthGuard] },
-  { path: 'presupuestos', component: PresupuestosComponent, canActivate: [AuthGuard] },
-  { path: 'calendario', component: CalendarioComponent, canActivate: [AuthGuard] },
-  { path: 'facturacion', component: FacturacionComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: 'login', pathMatch: 'full', data: { mostrarNavbar: false } },
+  { path: 'login', component: LoginComponent, data: { mostrarNavbar: false } },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] ,data: { mostrarNavbar: true } },
+  { path: 'clientes', component: ClientesComponent, canActivate: [AuthGuard] ,data: { mostrarNavbar: true }},
+  { path: 'servicios', component: ServiciosComponent, canActivate: [AuthGuard] ,data: { mostrarNavbar: true } },
+  { path: 'presupuestos', component: PresupuestosComponent, canActivate: [AuthGuard] ,data: { mostrarNavbar: true } },
+  { path: 'calendario', component: CalendarioComponent, canActivate: [AuthGuard] ,data: { mostrarNavbar: true } },
+  { path: 'facturacion', component: FacturacionComponent, canActivate: [AuthGuard],data: { mostrarNavbar: true } },
 ];

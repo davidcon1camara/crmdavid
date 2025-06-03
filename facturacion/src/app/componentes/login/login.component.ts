@@ -43,7 +43,7 @@ export class LoginComponent {
         const token = response.token;  // capturas el token del JSON recibido
         if (token) {
           localStorage.setItem('token', token);  // guardas el token para usar después
-          this.router.navigate(['home']);
+          this.router.navigate(['/home']);
         } else {
           alert('No se recibió token de autenticación');
         }
